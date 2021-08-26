@@ -61,10 +61,10 @@ class Api extends RestController
     public function auth_pusher_post()
     {
         $options = [
-            'cluster' => PUSHER_APP_CLUSTER,
+            'cluster' => PUSHER_CLUSTER,
         ];
 
-        $pusher = new Pusher(PUSHER_APP_KEY, PUSHER_APP_SECRET, PUSHER_APP_ID, $options);
+        $pusher = new Pusher(PUSHER_KEY, PUSHER_SECRET, PUSHER_ID, $options);
 
         $channel_name = $this->input->post('channel_name');
         $socket_id = $this->input->post('socket_id');

@@ -98,7 +98,7 @@ define('UNAUTHORIZED', [
     'error' => 'Error 401 (Unauthorized)',
 ]);
 define('METHOD_NOT_ALLOWED', 'Error 405 (Method Not Allowed)');
-define('PUSHER_APP_ID', '1095040');
-define('PUSHER_APP_KEY', '6539eb2be6761aab4ff8');
-define('PUSHER_APP_SECRET', '4b85ca42b23d63c74d91');
-define('PUSHER_APP_CLUSTER', 'ap1');
+define('PUSHER_ID', '1095040');
+define('PUSHER_KEY', '6539eb2be6761aab4ff8');
+define('PUSHER_SECRET', '4b85ca42b23d63c74d91');
+define('PUSHER_CLUSTER', 'ap1');
