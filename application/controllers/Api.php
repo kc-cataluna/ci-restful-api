@@ -3,6 +3,7 @@
 use chriskacerguis\RestServer\RestController;
 use App\Services\OrderService;
 use App\Traits\SendResponse;
+use Pusher\Pusher;
 
 class Api extends RestController
 {
@@ -55,5 +56,19 @@ class Api extends RestController
         }
 
         return $this->sendSuccessResponse($response);
+    }
+
+    public function auth_pusher_post()
+    {
+        $options = [
+            'cluster' => PUSHER_APP_CLUSTER,
+        ];
+
+        $pusher = new Pusher(PUSHER_APP_KEY, PUSHER_APP_SECRET, PUSHER_APP_ID, $options);
+
+        $channel_name = $this->input->post('channel_name');
+        $socket_id = $this->input->post('socket_id');
+
+        echo $pusher->presence_auth($channel_name, $socket_id, '');
     }
 }
